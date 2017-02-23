@@ -22,7 +22,7 @@ Default validation rules:
 
 ### Example
 
-[example.gif](../examples/example.gif)
+<img src="https://raw.githubusercontent.com/NewOldMax/react-material-ui-form-validator/master/examples/example.gif" width="285">
 
 ### Usage
 
