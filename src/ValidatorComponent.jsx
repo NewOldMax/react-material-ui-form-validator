@@ -103,7 +103,7 @@ ValidatorComponent.propTypes = {
     errorMessages: React.PropTypes.array,
     validators: React.PropTypes.array,
     name: React.PropTypes.string,
-    value: React.PropTypes.oneOf([
+    value: React.PropTypes.oneOfType([
         React.PropTypes.string,
         React.PropTypes.number,
     ]).isRequired,

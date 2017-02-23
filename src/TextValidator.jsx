@@ -6,7 +6,7 @@ export default class TextValidator extends ValidatorComponent {
 
     render() {
         // eslint-disable-next-line
-        const { errorMessage, validators, requiredError, ...rest } = this.props;
+        const { errorMessages, validators, requiredError, ...rest } = this.props;
         const { isValid } = this.state;
         return (
             <TextField

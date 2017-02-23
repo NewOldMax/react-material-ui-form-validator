@@ -1,6 +1,6 @@
 {
   "name": "react-material-ui-form-validator",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Simple validator for forms designed with material-ui components.",
   "main": "./lib/index.js",
   "scripts": {

@@ -153,7 +153,7 @@ import { ValidatorComponent } from 'react-material-ui-form-validator';
 export default class CustomCheckboxValidator extends ValidatorComponent {
 
     render() {
-        const { errorMessage, validators, requiredError, ...rest } = this.props;
+        const { errorMessages, validators, requiredError, ...rest } = this.props;
         const { isValid } = this.state;
         const errorMessage = !isValid && this.getErrorMessage();
         return (
