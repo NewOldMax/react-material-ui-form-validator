@@ -17,7 +17,7 @@ class ValidatorComponent extends React.Component {
         };
 
         this.validate = this.validate.bind(this);
-        this.getErrorMessages = this.getErrorMessages.bind(this);
+        this.getErrorMessage = this.getErrorMessage.bind(this);
         this.makeInvalid = this.makeInvalid.bind(this);
         this.instantValidate = true;
         this.configure = this.configure.bind(this);
@@ -40,7 +40,7 @@ class ValidatorComponent extends React.Component {
         this.context.form.detachFromForm(this);
     }
 
-    getErrorMessages() {
+    getErrorMessage() {
         const type = typeof this.state.errorMessages;
 
         if (type === 'string') {
