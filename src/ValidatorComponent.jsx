@@ -100,7 +100,10 @@ ValidatorComponent.contextTypes = {
 };
 
 ValidatorComponent.propTypes = {
-    errorMessages: React.PropTypes.array,
+    errorMessages: React.PropTypes.oneOfType([
+        React.PropTypes.array,
+        React.PropTypes.string,
+    ]),
     validators: React.PropTypes.array,
     name: React.PropTypes.string,
     value: React.PropTypes.oneOfType([
