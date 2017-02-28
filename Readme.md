@@ -1,5 +1,8 @@
 ## Validation component for material-ui forms
 
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/react-material-ui-form-validator.svg)](https://badge.fury.io/js/react-material-ui-form-validator)
+
 Simple form validation component for material-ui library inspired by [formsy-react](https://github.com/christianalfoni/formsy-react)
 
 Supported types:
