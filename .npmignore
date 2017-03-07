@@ -1,3 +1,5 @@
+examples/*
+src/*
 etc/*
 node_modules
 .DS_Store

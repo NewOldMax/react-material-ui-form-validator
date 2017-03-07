@@ -109,7 +109,7 @@ ValidatorComponent.propTypes = {
     value: React.PropTypes.oneOfType([
         React.PropTypes.string,
         React.PropTypes.number,
-    ]).isRequired,
+    ]),
 };
 
 ValidatorComponent.defaultProps = {
