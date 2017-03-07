@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import SelectField from 'material-ui/SelectField';
+/* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
 export default class SelectValidator extends ValidatorComponent {
@@ -11,6 +13,7 @@ export default class SelectValidator extends ValidatorComponent {
         return (
             <SelectField
                 {...rest}
+                ref={(r) => { this.input = r; }}
                 errorText={!isValid && this.getErrorMessage()}
             />
         );

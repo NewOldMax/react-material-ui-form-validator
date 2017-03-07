@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
+/* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
 export default class AutoCompleteValidator extends ValidatorComponent {
@@ -11,6 +13,7 @@ export default class AutoCompleteValidator extends ValidatorComponent {
         return (
             <AutoComplete
                 {...rest}
+                ref={(r) => { this.input = r; }}
                 errorText={!isValid && this.getErrorMessage()}
             />
         );

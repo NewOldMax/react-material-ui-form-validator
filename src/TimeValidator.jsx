@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import TimePicker from 'material-ui/TimePicker';
+/* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
 export default class TimeValidator extends ValidatorComponent {
@@ -11,6 +13,7 @@ export default class TimeValidator extends ValidatorComponent {
         return (
             <TimePicker
                 {...rest}
+                ref={(r) => { this.input = r; }}
                 errorText={!isValid && this.getErrorMessage()}
             />
         );

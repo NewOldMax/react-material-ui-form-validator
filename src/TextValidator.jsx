@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import TextField from 'material-ui/TextField';
+/* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
 export default class TextValidator extends ValidatorComponent {
@@ -11,6 +13,7 @@ export default class TextValidator extends ValidatorComponent {
         return (
             <TextField
                 {...rest}
+                ref={(r) => { this.input = r; }}
                 errorText={!isValid && this.getErrorMessage()}
             />
         );

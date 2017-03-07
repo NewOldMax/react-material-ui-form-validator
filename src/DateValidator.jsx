@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
+/* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
 export default class DateValidator extends ValidatorComponent {
@@ -11,6 +13,7 @@ export default class DateValidator extends ValidatorComponent {
         return (
             <DatePicker
                 {...rest}
+                ref={(r) => { this.input = r; }}
                 errorText={!isValid && this.getErrorMessage()}
             />
         );
