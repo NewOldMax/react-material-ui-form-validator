@@ -1,4 +1,6 @@
+/* eslint-disable */
 import React from 'react';
+/* eslint-enable */
 import Rules from './ValidationRules';
 
 class ValidatorForm extends React.Component {

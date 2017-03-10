@@ -170,6 +170,8 @@ export default class CustomCheckboxValidator extends ValidatorComponent {
 
 ````
 
+##### [Advanced usage](https://github.com/NewOldMax/react-material-ui-form-validator/wiki)
+
 ### API
 
 #### ValidatorForm
@@ -186,6 +188,7 @@ export default class CustomCheckboxValidator extends ValidatorComponent {
 | validators      | false    | array    |               | Array of validators. See list of default validators above.                             |
 | errorMessages   | false    | array    |               | Array of error messages. Order of messages should be the same as `validators` prop.    |
 | name            | true     | string   |               | Name of input                                                                          |
+
 
 ### Contributing
 
