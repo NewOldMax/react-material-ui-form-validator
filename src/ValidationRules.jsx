@@ -15,8 +15,8 @@ const isEmptyTrimed = function (value) {
 
 const validations = {
     matchRegexp: (value, regexp) => {
-      let validationRegexp = (regexp instanceof RegExp ? regexp : (new RegExp(regexp)))
-      return (!isExisty(value) || _isEmpty(value) || validationRegexp.test(value))
+        const validationRegexp = (regexp instanceof RegExp ? regexp : (new RegExp(regexp)));
+        return (!isExisty(value) || isEmpty(value) || validationRegexp.test(value));
     },
 
     // eslint-disable-next-line
