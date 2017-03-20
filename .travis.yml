@@ -5,4 +5,7 @@ node_js:
   - 6
 rvm:
   - 2.2.3
-script: "npm lint"
+script: "npm run lint"
+cache:
+  directories:
+    - node_modules
