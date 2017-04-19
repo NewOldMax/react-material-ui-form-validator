@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 /* eslint-enable */
 import ValidatorForm from './ValidatorForm';
 
@@ -98,19 +99,19 @@ class ValidatorComponent extends React.Component {
 }
 
 ValidatorComponent.contextTypes = {
-    form: React.PropTypes.object,
+    form: PropTypes.object,
 };
 
 ValidatorComponent.propTypes = {
-    errorMessages: React.PropTypes.oneOfType([
-        React.PropTypes.array,
-        React.PropTypes.string,
+    errorMessages: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
     ]),
-    validators: React.PropTypes.array,
-    name: React.PropTypes.string,
-    value: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.number,
+    validators: PropTypes.array,
+    name: PropTypes.string,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
     ]),
 };
 

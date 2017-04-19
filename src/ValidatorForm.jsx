@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 /* eslint-enable */
 import Rules from './ValidationRules';
 
@@ -143,13 +144,13 @@ ValidatorForm.addValidationRule = (name, callback) => {
 };
 
 ValidatorForm.childContextTypes = {
-    form: React.PropTypes.object,
+    form: PropTypes.object,
 };
 
 ValidatorForm.propTypes = {
-    onSubmit: React.PropTypes.func.isRequired,
-    instantValidate: React.PropTypes.bool,
-    children: React.PropTypes.node,
+    onSubmit: PropTypes.func.isRequired,
+    instantValidate: PropTypes.bool,
+    children: PropTypes.node,
 };
 
 export default ValidatorForm;

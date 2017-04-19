@@ -7,11 +7,11 @@
 Simple form validation component for material-ui library inspired by [formsy-react](https://github.com/christianalfoni/formsy-react)
 
 Supported types:
-+ Text
-+ Select
-+ AutoComplete
-+ Date
-+ Time
++ Text ([TextValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/TextValidator.jsx))
++ Select ([SelectValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/SelectValidator.jsx))
++ AutoComplete ([AutoCompleteValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/AutoCompleteValidator.jsx))
++ Date ([DateValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/DateValidator.jsx))
++ Time ([TimeValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/TimeValidator.jsx))
 
 Default validation rules:
 + matchRegexp
@@ -30,7 +30,7 @@ Default validation rules:
 
 ### Usage
 
-You can pass any props of field components except ``errorText``, use ``errorMessages`` instead.
+You can pass any props of field components, but note that ``errorText`` prop will be replaced when validation errors occurred.
 Your component must [provide a theme](http://www.material-ui.com/#/get-started/usage).
 
 ````javascript
@@ -151,24 +151,63 @@ class ResetPasswordForm extends React.Component {
 Currently material-ui [doesn't support](https://github.com/callemall/material-ui/issues/3771) error messages for switches, but you can easily add your own:
 ````javascript
 import React from 'react';
+import { red300 } from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
 import { ValidatorComponent } from 'react-material-ui-form-validator';
 
-export default class CustomCheckboxValidator extends ValidatorComponent {
+class CheckboxValidatorElement extends ValidatorComponent {
 
     render() {
-        const { errorMessages, validators, requiredError, ...rest } = this.props;
-        const { isValid } = this.state;
-        const errorMessage = !isValid && this.getErrorMessage();
+        const { errorMessages, validators, requiredError, value, ...rest } = this.props;
+
         return (
             <div>
-                <Checkbox {...rest} />
-                {errorMessage}
+                <Checkbox
+                    {...rest}
+                    ref={(r) => { this.input = r; }}
+                />
+                {this.errorText()}
+            </div>
+        );
+    }
+
+    errorText() {
+        const { isValid } = this.state;
+
+        if (isValid) {
+            return null;
+        }
+
+        const style = {
+            right: 0,
+            fontSize: '12px',
+            color: red300,
+            position: 'absolute',
+            marginTop: '-25px',
+        };
+
+        return (
+            <div style={style}>
+                {this.getErrorMessage()}
             </div>
         );
     }
 }
 
+export default CheckboxValidatorElement;
+````
+````javascript
+    componentWillMount() {
+        ValidatorForm.addValidationRule('isTruthy', value => value);
+    }
+...
+    <CheckboxValidatorElement
+        ...
+        validators=['isTruthy']
+        errorMessages=['this field is required']
+        checked={value}
+        value={value} <---- you must provide this prop, it will be used only for validation
+    />
 ````
 
 ##### [Advanced usage](https://github.com/NewOldMax/react-material-ui-form-validator/wiki)

@@ -8,13 +8,13 @@ export default class AutoCompleteValidator extends ValidatorComponent {
 
     render() {
         // eslint-disable-next-line
-        const { errorMessages, validators, requiredError, ...rest } = this.props;
+        const { errorMessages, validators, requiredError, errorText, ...rest } = this.props;
         const { isValid } = this.state;
         return (
             <AutoComplete
                 {...rest}
                 ref={(r) => { this.input = r; }}
-                errorText={!isValid && this.getErrorMessage()}
+                errorText={(!isValid && this.getErrorMessage()) || errorText}
             />
         );
     }
