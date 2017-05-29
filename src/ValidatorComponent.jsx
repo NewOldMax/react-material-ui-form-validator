@@ -109,11 +109,7 @@ ValidatorComponent.propTypes = {
     ]),
     validators: PropTypes.array,
     name: PropTypes.string,
-    value: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.string,
-        PropTypes.number,
-    ]),
+    value: PropTypes.any,
 };
 
 ValidatorComponent.defaultProps = {
