@@ -28,6 +28,7 @@ class ValidatorForm extends React.Component {
 
     componentWillMount() {
         this.childs = [];
+        this.errors = [];
         this.instantValidate = this.props.instantValidate !== undefined ? this.props.instantValidate : true;
     }
 
@@ -64,9 +65,13 @@ class ValidatorForm extends React.Component {
         if (event) {
             event.preventDefault();
         }
+        this.errors = [];
         const result = this.walk(this.childs);
+        if (this.errors.length) {
+            this.props.onError(this.errors);
+        }
         if (result) {
-            this.props.onSubmit();
+            this.props.onSubmit(event);
         }
         return false;
     }
@@ -105,13 +110,14 @@ class ValidatorForm extends React.Component {
         const component = this.find(this.childs, component => component.props.name === input.props.name);
         validators.map((validator) => {
             validateResult = this.getValidator(validator, value, includeRequired);
-            result.push(validateResult);
+            result.push({ input, result: validateResult });
             component.validate(component.props.value, true);
             return validator;
         });
         result.map((item) => {
-            if (!item) {
+            if (!item.result) {
                 valid = false;
+                this.errors.push(item.input);
             }
             return item;
         });
@@ -151,6 +157,11 @@ ValidatorForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     instantValidate: PropTypes.bool,
     children: PropTypes.node,
+    onError: PropTypes.func,
+};
+
+ValidatorForm.defaultProps = {
+    onError: () => {},
 };
 
 export default ValidatorForm;

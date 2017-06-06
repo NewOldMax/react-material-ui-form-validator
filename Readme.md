@@ -62,6 +62,7 @@ class MyForm extends React.Component {
             <ValidatorForm
                 ref="form"
                 onSubmit={this.handleSubmit}
+                onError={errors => console.log(errors)}
             >
                 <TextValidator
                     floatingLabelText="Email"
@@ -219,7 +220,8 @@ export default CheckboxValidatorElement;
 | Prop            | Required | Type     | Default value | Description                                                                                                                  |
 |-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
 | onSubmit        | true     | function |               | Callback for form that fires when all validations are passed                                                                 |
-| instantValidate | false    | bool     | false         | If true, form will be validated after each field change. If false, form will be validated only after clicking submit button. |
+| instantValidate | false    | bool     | true          | If true, form will be validated after each field change. If false, form will be validated only after clicking submit button. |
+| onError         | false    | function |               | Callback for form that fires when some of validations are not passed. It will return array of elements which not valid. |
 
 #### All validated fields (ValidatorComponent)
 
