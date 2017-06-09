@@ -31,12 +31,17 @@ class ValidatorComponent extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.instantValidate) {
+        if (this.instantValidate && nextProps.value !== this.props.value) {
             this.validate(nextProps.value);
         }
-        if (nextProps.validators && nextProps.errorMessages) {
+        if (nextProps.validators && nextProps.errorMessages &&
+            (this.props.validators !== nextProps.validators || this.props.errorMessages !== nextProps.errorMessages)) {
             this.setState({ validators: nextProps.validators, errorMessages: nextProps.errorMessages });
         }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state !== nextState || this.props !== nextProps;
     }
 
     componentWillUnmount() {
@@ -85,7 +90,9 @@ class ValidatorComponent extends React.Component {
             }),
         );
 
-        this.setState({ isValid: valid });
+        this.setState({ isValid: valid }, () => {
+            this.props.validatorListener(this.state.isValid);
+        });
     }
 
 
@@ -110,11 +117,13 @@ ValidatorComponent.propTypes = {
     validators: PropTypes.array,
     name: PropTypes.string,
     value: PropTypes.any,
+    validatorListener: PropTypes.func,
 };
 
 ValidatorComponent.defaultProps = {
     errorMessages: 'error',
     validators: [],
+    validatorListener: () => {},
 };
 
 export default ValidatorComponent;

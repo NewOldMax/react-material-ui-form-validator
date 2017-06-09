@@ -136,7 +136,7 @@ class ValidatorForm extends React.Component {
 
     render() {
         // eslint-disable-next-line
-        const { onSubmit, instantValidate, ...rest } = this.props;
+        const { onSubmit, instantValidate, onError, ...rest } = this.props;
         return (
             <form {...rest} onSubmit={this.submit}>
                 {this.props.children}
