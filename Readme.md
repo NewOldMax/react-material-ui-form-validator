@@ -22,6 +22,16 @@ Default validation rules:
 + isNumber
 + isFloat
 + isPositive
++ minNumber
++ maxNumber
+
+Some rules can accept extra parameter, example:
+````javascript
+<TextValidator
+   {...someProps}
+   validators={['minNumber:0', 'maxNumber:255', 'matchRegexp:^[0-9]$']}
+/>
+````
 
 
 ### Example
