@@ -6,7 +6,7 @@ import App from './components/App';
 
 ReactDOM.render(
     <MuiThemeProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/react-material-ui-form-validator">
             <App />
         </BrowserRouter>
     </MuiThemeProvider>,
