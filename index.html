@@ -3,10 +3,82 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>React for GitHub Pages</title>
+    <title>React material-ui form validator</title>
+    <meta name="description" content="Lightweight solution for deploying single page apps with GitHub Pages. Code and concept by Rafael Pedicini.">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/codemirror.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/theme/monokai.min.css"/>
+
+    <link rel="stylesheet" href="/build/prism.css" data-noprefix />
+
+    <style>
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+      html, body, div, span, a, p, ul, li, h1, code, nav {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        box-sizing: inherit;
+        font: inherit;
+        text-decoration: inherit;
+        text-align: inherit;
+        color: inherit;
+        background: transparent;
+        font-family: 'Roboto', sans-serif;
+      }
+      /*pass window height (w/o scroll bars) down to react app, note can't use vh becasue that
+      includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
+      html, body { height: 100%; min-height: 100%; }
+      html { background-color: rgb(0, 120, 0); }
+      #root { background-color: #F0F0F0; min-height: 100%; }
+
+      /*required for IE/Edge to be compatible with left:50vw & transform:translate(-50%, 0),
+      otherwise there is a phantom div on the right side of the screen (from the left:50vw),
+      that the window will scroll to. Note the left:50vw and transform is used to center content
+      horizaontally based on vw to prevent content jump when vertical scroll bar show/hide.*/
+      body { overflow-x: hidden; }
+    </style>
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafrex/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
   </head>
   <body>
     <div id="root"></div>
-    <script src="__build__/bundle.js"></script>
+    <!-- single page app in bundle.js -->
+    <script type="text/javascript" src="/build/prism.js"></script> 
+    <script src="/build/bundle.js"></script>
   </body>
 </html>
