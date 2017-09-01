@@ -30,7 +30,7 @@ const style = {
 const Home = () => (
     <div style={style.container}>
         <a href="https://github.com/NewOldMax/react-material-ui-form-validator" style={style.link}>
-            <img src="/build/logo.png" alt="GitHub" />
+            <img src="build/logo.png" alt="GitHub" />
         </a>
         <h1 style={style.title}>React material-ui form validator examples</h1>
         <Paper style={style.example}>
