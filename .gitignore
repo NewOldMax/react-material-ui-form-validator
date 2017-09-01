@@ -1,9 +1,8 @@
-lib/*
-etc/*
+# Dependency directory
 node_modules
-.DS_Store
-build/*
-npm-debug.log
-config.jsx
-!config.jsx.dist
-.idea
+
+# Source maps
+*.js.map
+
+# Files marked with gitigx
+*gitigx*
