@@ -28,7 +28,6 @@
     "material-ui": "next",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "react-autosuggest": "^9.3.2",
     "prop-types": "^15.0.0"
   },
   "devDependencies": {
