@@ -1,7 +1,6 @@
 {
   "name": "react-material-ui-form-validator",
-  "private": true,
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Simple validator for forms designed with material-ui components.",
   "main": "./lib/index.js",
   "scripts": {
