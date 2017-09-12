@@ -6,6 +6,10 @@
 
 ### [Demo](https://newoldmax.github.io/react-material-ui-form-validator/)
 
+### Versions
++ 0.x - supports material-ui <= 0.x
++ 1.x - supports material-ui >= 1.x (experimental support, you can install it by ``npm i react-material-ui-form-validator@next``)
+
 Simple form validation component for material-ui library inspired by [formsy-react](https://github.com/christianalfoni/formsy-react)
 
 Supported types:
