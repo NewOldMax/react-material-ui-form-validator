@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import AutoComplete from 'material-ui/AutoComplete';
+import TextField from 'material-ui/TextField';
+import Autosuggest from 'react-autosuggest';
 /* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
@@ -8,13 +9,18 @@ export default class AutoCompleteValidator extends ValidatorComponent {
 
     render() {
         // eslint-disable-next-line
-        const { errorMessages, validators, requiredError, errorText, validatorListener, ...rest } = this.props;
+        const { errorMessages, validators, requiredError, helperText, validatorListener, autosuggestProps,  ...rest } = this.props;
         const { isValid } = this.state;
         return (
-            <AutoComplete
-                {...rest}
-                ref={(r) => { this.input = r; }}
-                errorText={(!isValid && this.getErrorMessage()) || errorText}
+            <Autosuggest
+                renderInputComponent={(
+                    <TextField
+                        {...rest}
+                        ref={(r) => { this.input = r; }}
+                        helperText={(!isValid && this.getErrorMessage()) || helperText}
+                    />
+                )}
+                {...autosuggestProps}
             />
         );
     }

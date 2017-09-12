@@ -1,21 +1,35 @@
 /* eslint-disable */
 import React from 'react';
-import SelectField from 'material-ui/SelectField';
+import Select from 'material-ui/Select';
+import { FormHelperText } from 'material-ui/Form';
+import { InputLabel } from 'material-ui/Input';
 /* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
 export default class SelectValidator extends ValidatorComponent {
 
     render() {
-        // eslint-disable-next-line
-        const { errorMessages, validators, requiredError, errorText, validatorListener, ...rest } = this.props;
+        /* eslint-disable no-unused-vars */
+        const {
+            errorMessages,
+            validators,
+            requiredError,
+            helperText,
+            validatorListener,
+            formControl: FormControl,
+            inputLabel: InputLabel,
+            ...rest
+        } = this.props;
         const { isValid } = this.state;
         return (
-            <SelectField
-                {...rest}
-                ref={(r) => { this.input = r; }}
-                errorText={(!isValid && this.getErrorMessage()) || errorText}
-            />
+            <FormControl error={!isValid}>
+                <InputLabel />
+                <Select
+                    {...rest}
+                    ref={(r) => { this.input = r; }}
+                />
+                <FormHelperText>{(!isValid && this.getErrorMessage()) || helperText}</FormHelperText>
+            </FormControl>
         );
     }
 }
