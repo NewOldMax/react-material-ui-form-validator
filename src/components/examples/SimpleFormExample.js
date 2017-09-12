@@ -1,5 +1,5 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class SimpleFormExample extends React.Component {
@@ -40,7 +40,7 @@ export default class SimpleFormExample extends React.Component {
             >
                 <h2>Simple form</h2>
                 <TextValidator
-                    floatingLabelText="Email"
+                    label="Email"
                     onChange={this.handleChange}
                     name="email"
                     value={formData.email}
@@ -49,22 +49,25 @@ export default class SimpleFormExample extends React.Component {
                 />
                 <br />
                 <TextValidator
-                    floatingLabelText="Password"
+                    label="Password"
                     onChange={this.handleChange}
                     name="password"
+                    type="password"
                     value={formData.password}
                     validators={['required']}
                     errorMessages={['this field is required']}
                 />
                 <br />
-                <RaisedButton
+                <Button
+                    raised
                     type="submit"
-                    label={
+                    disabled={submitted}
+                >
+                    {
                         (submitted && 'Your form is submitted!')
                         || (!submitted && 'Submit')
                     }
-                    disabled={submitted}
-                />
+                </Button>
             </ValidatorForm>
         );
     }

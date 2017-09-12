@@ -1,12 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-
-const errorStyle = {
-    position: 'absolute',
-    marginBottom: '-22px',
-    color: 'red',
-};
 
 export default class StepByStepExample extends React.Component {
 
@@ -74,13 +68,12 @@ export default class StepByStepExample extends React.Component {
                     <TextValidator
                         key={1}
                         name="email1"
-                        floatingLabelText="email 1"
+                        label="email 1"
                         validators={['required', 'isEmail']}
                         errorMessages={['required field', 'invalid email']}
                         value={data.email1}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                        errorStyle={errorStyle}
                     />);
                 break;
             case 2:
@@ -88,13 +81,12 @@ export default class StepByStepExample extends React.Component {
                     <TextValidator
                         key={2}
                         name="email2"
-                        floatingLabelText="email 2"
+                        label="email 2"
                         validators={['required', 'isEmail']}
                         errorMessages={['required field', 'invalid email']}
                         value={data.email2}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                        errorStyle={errorStyle}
                     />);
                 break;
             case 3:
@@ -102,13 +94,12 @@ export default class StepByStepExample extends React.Component {
                     <TextValidator
                         key={3}
                         name="email3"
-                        floatingLabelText="email 3"
+                        label="email 3"
                         validators={['required', 'isEmail']}
                         errorMessages={['required field', 'invalid email']}
                         value={data.email3}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                        errorStyle={errorStyle}
                     />);
                 break;
         }
@@ -129,22 +120,24 @@ export default class StepByStepExample extends React.Component {
                 <br />
                 <br />
                 <br />
-                <RaisedButton
-                    label="previous"
+                <Button
+                    raised
                     onClick={this.prevStep}
                     style={{ marginRight: '16px' }}
-                    primary
                     disabled={step === 1}
-                />
-                <RaisedButton
-                    label={
+                >
+                    previous
+                </Button>
+                <Button
+                    raised
+                    onClick={step < 3 ? this.nextStep : this.submit}
+                    disabled={disabled || submitted}
+                >
+                    {
                         (submitted && 'Your form is submitted!') ||
                         (step < 3 ? 'Next' : 'Submit')
                     }
-                    onClick={step < 3 ? this.nextStep : this.submit}
-                    primary
-                    disabled={disabled || submitted}
-                />
+                </Button>
             </ValidatorForm>
         );
     }

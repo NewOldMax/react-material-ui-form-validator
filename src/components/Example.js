@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PrismCode } from 'react-prism';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 const getStyle = (open) => {
     if (open) {
@@ -40,7 +40,9 @@ class Example extends React.Component {
         const style = getStyle(this.state.open);
         return (
             <div>
-                <FlatButton style={styles.button} onClick={this.toggleState} label="Show code" />
+                <Button style={styles.button} onClick={this.toggleState}>
+                    Show code
+                </Button>
                 <div style={{ ...styles.container, ...style }}>
                     <PrismCode {...rest}>{children}</PrismCode>
                 </div>

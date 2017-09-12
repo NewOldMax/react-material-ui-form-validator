@@ -1,5 +1,5 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class OnBlurExample extends React.Component {
@@ -43,7 +43,7 @@ export default class OnBlurExample extends React.Component {
                 <h2>OnBlur</h2>
                 <TextValidator
                     ref="email"
-                    floatingLabelText="Email"
+                    label="Email"
                     onBlur={this.handleBlur}
                     onChange={this.handleChange}
                     name="email"
@@ -52,14 +52,16 @@ export default class OnBlurExample extends React.Component {
                     errorMessages={['this field is required', 'email is not valid']}
                 />
                 <br />
-                <RaisedButton
+                <Button
+                    raised
                     type="submit"
-                    label={
+                    disabled={submitted}
+                >
+                    {
                         (submitted && 'Your form is submitted!') ||
                         (!submitted && 'Submit')
                     }
-                    disabled={submitted}
-                />
+                </Button>
             </ValidatorForm>
         );
     }
