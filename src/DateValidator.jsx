@@ -2,7 +2,7 @@
 import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 /* eslint-enable */
-import ValidatorComponent from './ValidatorComponent';
+import { ValidatorComponent } from 'react-form-validator-core';
 
 export default class DateValidator extends ValidatorComponent {
 

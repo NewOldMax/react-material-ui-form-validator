@@ -2,7 +2,7 @@
 import React from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 /* eslint-enable */
-import ValidatorComponent from './ValidatorComponent';
+import { ValidatorComponent } from 'react-form-validator-core';
 
 export default class AutoCompleteValidator extends ValidatorComponent {
 

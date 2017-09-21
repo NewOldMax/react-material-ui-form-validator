@@ -2,7 +2,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 /* eslint-enable */
-import ValidatorComponent from './ValidatorComponent';
+import { ValidatorComponent } from 'react-form-validator-core';
 
 export default class TextValidator extends ValidatorComponent {
 
