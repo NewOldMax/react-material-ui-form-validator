@@ -1,6 +1,6 @@
 {
   "name": "react-material-ui-form-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Implementation of react-form-validator-core for material-ui",
   "main": "./lib/index.js",
   "scripts": {
@@ -29,8 +29,8 @@
   },
   "peerDependencies": {
     "material-ui": ">=0.16.0 <1",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
+    "react": "^15.0.0 || 16.0.0",
+    "react-dom": "^15.0.0 || 16.0.0",
     "prop-types": "^15.0.0"
   },
   "devDependencies": {

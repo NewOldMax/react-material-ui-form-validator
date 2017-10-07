@@ -11,8 +11,9 @@ Core validation was moved to [react-form-validator-core](https://www.npmjs.com/p
 ### [Demo](https://newoldmax.github.io/react-material-ui-form-validator/)
 
 ### Versions
-+ 0.x, 1.x - supports material-ui <= 0.x
-+ 2.x - supports material-ui >= 1.x (experimental support, you can install it by ``npm i react-material-ui-form-validator@next``)
++ <= 1.x - supports material-ui <= 0.x
++ => 2.x - supports material-ui >= 1.x (experimental support, you can install it by ``npm i react-material-ui-form-validator@next``)
++ => 1.0.1 - supports React 16
 
 Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui](http://www.material-ui.com)
 
