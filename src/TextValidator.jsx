@@ -14,7 +14,6 @@ export default class TextValidator extends ValidatorComponent {
             <TextField
                 {...rest}
                 error={!isValid}
-                ref={(r) => { this.input = r; }}
                 helperText={(!isValid && this.getErrorMessage()) || helperText}
             />
         );

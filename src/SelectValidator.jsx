@@ -26,7 +26,6 @@ export default class SelectValidator extends ValidatorComponent {
                 <InputLabel />
                 <Select
                     {...rest}
-                    ref={(r) => { this.input = r; }}
                 />
                 <FormHelperText>{(!isValid && this.getErrorMessage()) || helperText}</FormHelperText>
             </FormControl>

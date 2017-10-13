@@ -119,8 +119,8 @@ ValidatorComponent.propTypes = {
     value: PropTypes.any,
     validatorListener: PropTypes.func,
     autosuggestProps: PropTypes.object,
-    formControl: PropTypes.node,
-    inputLabel: PropTypes.node,
+    formControl: PropTypes.func,
+    inputLabel: PropTypes.func,
 };
 
 ValidatorComponent.defaultProps = {
