@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import Select from 'material-ui/Select';
-import { FormHelperText } from 'material-ui/Form';
+import { FormControl, FormHelperText } from 'material-ui/Form';
 import { InputLabel } from 'material-ui/Input';
 /* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
