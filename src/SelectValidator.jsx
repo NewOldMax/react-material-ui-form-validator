@@ -1,8 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import Select from 'material-ui/Select';
+import TextField from 'material-ui/TextField';
 import { FormHelperText } from 'material-ui/Form';
-import { InputLabel } from 'material-ui/Input';
 /* eslint-enable */
 import ValidatorComponent from './ValidatorComponent';
 
@@ -16,19 +15,16 @@ export default class SelectValidator extends ValidatorComponent {
             requiredError,
             helperText,
             validatorListener,
-            formControl: FormControl,
-            inputLabel: InputLabel,
             ...rest
         } = this.props;
         const { isValid } = this.state;
         return (
-            <FormControl error={!isValid}>
-                <InputLabel />
-                <Select
-                    {...rest}
-                />
-                <FormHelperText>{(!isValid && this.getErrorMessage()) || helperText}</FormHelperText>
-            </FormControl>
+            <TextField
+                {...rest}
+                select
+                error={!isValid}
+                helperText={(!isValid && this.getErrorMessage()) || helperText}
+            />
         );
     }
 }
