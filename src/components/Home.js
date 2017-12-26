@@ -1,6 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import SimpleFormExample from './examples/SimpleFormExample';
+import ResetFormExample from './examples/ResetFormExample';
 import CustomRulesFormExample from './examples/CustomRulesFormExample';
 import OnBlurExample from './examples/OnBlurExample';
 import StepByStepExample from './examples/StepByStepExample';
@@ -38,6 +39,12 @@ const Home = () => (
                 {require('./examples/SimpleFormExample.example')}
             </Example>
             <SimpleFormExample />
+        </Paper>
+        <Paper style={style.example}>
+            <Example className="language-javascript" component="pre">
+                {require('./examples/ResetFormExample.example')}
+            </Example>
+            <ResetFormExample />
         </Paper>
         <Paper style={style.example}>
             <Example className="language-javascript" component="pre">
