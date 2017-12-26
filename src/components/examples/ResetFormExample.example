@@ -50,7 +50,7 @@ export default class ResetFormExample extends React.Component {
                 ref="form"
                 onSubmit={this.handleSubmit}
             >
-                <h2>Simple form</h2>
+                <h2>Reset form</h2>
                 <TextValidator
                     floatingLabelText="Email"
                     onChange={this.handleChange}
@@ -75,12 +75,14 @@ export default class ResetFormExample extends React.Component {
                         (submitted && 'Your form is submitted!')
                         || (!submitted && 'Submit')
                     }
+                    style={{ marginRight: '16px' }}
                     disabled={submitted}
                 />
                 <RaisedButton
                     type="button"
-                    label="reset form"
+                    label="reset"
                     onClick={this.reset}
+                    primary
                 />
             </ValidatorForm>
         );
