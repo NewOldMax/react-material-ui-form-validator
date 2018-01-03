@@ -4,7 +4,7 @@
   "private": true,
   "description": "Single Page Apps for GitHub Pages",
   "scripts": {
-    "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open --host 0.0.0.0 --port 8082",
+    "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --disableHostCheck --host 0.0.0.0 --port 8082",
     "build": "webpack -p"
   },
   "repository": {
@@ -14,13 +14,13 @@
   "author": "Rafael Pedicini <code@rafrex.com>",
   "license": "MIT",
   "dependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-router-dom": "^4.1.1",
-    "material-ui": "0.19.3",
+    "material-ui": "0.20.0",
     "react-form-validator-core": "0.3.0",
-    "react-material-ui-form-validator": "1.0.4",
+    "react-material-ui-form-validator": "1.0.5",
     "react-prism": "4.3.0",
     "prismjs": "1.6.0"
   },
