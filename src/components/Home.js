@@ -5,6 +5,7 @@ import ResetFormExample from './examples/ResetFormExample';
 import CustomRulesFormExample from './examples/CustomRulesFormExample';
 import OnBlurExample from './examples/OnBlurExample';
 import StepByStepExample from './examples/StepByStepExample';
+import DebounceFormExample from './examples/DebounceFormExample';
 import Example from './Example';
 
 const style = {
@@ -63,6 +64,12 @@ const Home = () => (
                 {require('./examples/StepByStepExample.example')}
             </Example>
             <StepByStepExample />
+        </Paper>
+        <Paper style={style.example}>
+            <Example className="language-javascript" component="pre">
+                {require('./examples/DebounceFormExample.example')}
+            </Example>
+            <DebounceFormExample />
         </Paper>
     </div>
 );
