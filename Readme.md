@@ -4,9 +4,10 @@
 [![npm version](https://badge.fury.io/js/react-material-ui-form-validator.svg)](https://badge.fury.io/js/react-material-ui-form-validator)
 [![Build Status](https://travis-ci.org/NewOldMax/react-material-ui-form-validator.svg?branch=master)](https://travis-ci.org/NewOldMax/react-material-ui-form-validator)
 
-## Breaking change
+## Warning
 
-Core validation was moved to [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) package. You need install it in order to use this package
+Core validation was moved to [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) package. ~~You need install it in order to use this package~~
+Compatible version will be installed automatically.
 
 ### [Demo](https://newoldmax.github.io/react-material-ui-form-validator/)
 
@@ -46,14 +47,13 @@ Your component must [provide a theme](http://www.material-ui.com/#/get-started/u
 
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { ValidatorForm } from 'react-form-validator-core';
-import { TextValidator} from 'react-material-ui-form-validator';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 
 class MyForm extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this.state = {};
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -95,8 +95,7 @@ You can add your custom rules:
 
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { ValidatorForm } from 'react-form-validator-core';
-import { TextValidator} from 'react-material-ui-form-validator';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 
 class ResetPasswordForm extends React.Component {
 
@@ -165,7 +164,7 @@ Currently material-ui [doesn't support](https://github.com/callemall/material-ui
 import React from 'react';
 import { red300 } from 'material-ui/styles/colors';
 import Checkbox from 'material-ui/Checkbox';
-import { ValidatorComponent } from 'react-form-validator-core';
+import { ValidatorComponent } from 'react-material-ui-form-validator';
 
 class CheckboxValidatorElement extends ValidatorComponent {
 
