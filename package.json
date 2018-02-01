@@ -19,8 +19,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.1.1",
     "material-ui": "0.20.0",
-    "react-form-validator-core": "0.4.1",
-    "react-material-ui-form-validator": "1.0.7",
+    "react-material-ui-form-validator": "1.1.0",
     "react-prism": "4.3.0",
     "prismjs": "1.6.0"
   },
