@@ -1,9 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import { FormHelperText } from 'material-ui/Form';
 /* eslint-enable */
-import ValidatorComponent from './ValidatorComponent';
+import { ValidatorComponent } from 'react-form-validator-core';
 
 export default class SelectValidator extends ValidatorComponent {
 

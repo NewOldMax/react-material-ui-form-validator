@@ -1,10 +1,8 @@
-import AutoCompleteValidator from './AutoCompleteValidator';
+import { ValidatorComponent, ValidatorForm } from 'react-form-validator-core';
+
 import SelectValidator from './SelectValidator';
 import TextValidator from './TextValidator';
-import ValidatorComponent from './ValidatorComponent';
-import ValidatorForm from './ValidatorForm';
 
-exports.AutoCompleteValidator = AutoCompleteValidator;
 exports.SelectValidator = SelectValidator;
 exports.TextValidator = TextValidator;
 exports.ValidatorComponent = ValidatorComponent;
