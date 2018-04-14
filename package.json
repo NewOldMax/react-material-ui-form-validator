@@ -5,7 +5,7 @@
   "description": "Single Page Apps for GitHub Pages",
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --disableHostCheck --host 0.0.0.0 --port 8082",
-    "build": "webpack --define process.env.NODE_ENV=\"production\""
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
