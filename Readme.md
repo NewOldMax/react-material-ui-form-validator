@@ -14,7 +14,8 @@ npm install react-material-ui-form-validator@next
 
 ### Versions
 + 0.x, 1.x - supports material-ui <= 0.x
-+ 2.x - supports material-ui >= 1.x (experimental support, you can install it by ``npm i react-material-ui-form-validator@next``)
++ up to 2.0.0-beta.9 - supports material-ui >= 1.x (you can install it by ``npm i react-material-ui-form-validator@2.0.0-beta.9``)
++ from 2.0.0-beta.10 - supports @material-ui/core (you can install it by ``npm i react-material-ui-form-validator@next``)
 
 Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui v1](https://material-ui-next.com/)
 
