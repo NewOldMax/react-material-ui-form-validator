@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class OnBlurExample extends React.Component {

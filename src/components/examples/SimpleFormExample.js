@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class SimpleFormExample extends React.Component {
@@ -52,7 +52,6 @@ export default class SimpleFormExample extends React.Component {
                     label="Password"
                     onChange={this.handleChange}
                     name="password"
-                    type="password"
                     value={formData.password}
                     validators={['required']}
                     errorMessages={['this field is required']}
