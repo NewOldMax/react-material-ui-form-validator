@@ -44,23 +44,19 @@ Your component must [provide a theme](http://www.material-ui.com/#/get-started/u
 ````javascript
 
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class MyForm extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-        this.handleChange = this.handleChange.bind(this);
-    }
+    state = {}
 
-    handleChange(event) {
+    handleChange = (event) => {
         const email = event.target.value;
         this.setState({ email });
     }
 
-    handleSubmit() {
+    handleSubmit = () => {
         // your submit logic
     }
 
@@ -73,14 +69,14 @@ class MyForm extends React.Component {
                 onError={errors => console.log(errors)}
             >
                 <TextValidator
-                    floatingLabelText="Email"
+                    label="Email"
                     onChange={this.handleChange}
                     name="email"
                     value={email}
                     validators={['required', 'isEmail']}
                     errorMessages={['this field is required', 'email is not valid']}
                 />
-                <RaisedButton type="submit" />
+                <Button type="submit">Submit</Button>
             </ValidatorForm>
         );
     }
@@ -92,20 +88,14 @@ You can add your custom rules:
 ````javascript
 
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class ResetPasswordForm extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {},
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
+    state = { user: {} };
 
-    componentWillMount() {
+    componentDidMount() {
         // custom rule will have name 'isPasswordMatch'
         ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
             if (value !== this.state.user.password) {
@@ -115,13 +105,13 @@ class ResetPasswordForm extends React.Component {
         });
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         const { user } = this.state;
         user[event.target.name] = event.target.value;
         this.setState({ user });
     }
 
-    handleSubmit() {
+    handleSubmit = () => {
         // your submit logic
     }
 
@@ -133,7 +123,7 @@ class ResetPasswordForm extends React.Component {
                 onSubmit={this.handleSubmit}
             >
                 <TextValidator
-                    floatingLabelText="Password"
+                    label="Password"
                     onChange={this.handleChange}
                     name="password"
                     type="password"
@@ -142,7 +132,7 @@ class ResetPasswordForm extends React.Component {
                     value={user.password}
                 />
                 <TextValidator
-                    floatingLabelText="Repeat password"
+                    label="Repeat password"
                     onChange={this.handleChange}
                     name="repeatPassword"
                     type="password"
@@ -150,7 +140,7 @@ class ResetPasswordForm extends React.Component {
                     errorMessages={['password mismatch', 'this field is required']}
                     value={user.repeatPassword}
                 />
-                <RaisedButton type="submit" />
+                <Button type="submit">Submit</Button>
             </ValidatorForm>
         );
     }
@@ -160,9 +150,19 @@ class ResetPasswordForm extends React.Component {
 Currently material-ui [doesn't support](https://github.com/callemall/material-ui/issues/3771) error messages for switches, but you can easily add your own:
 ````javascript
 import React from 'react';
-import { red300 } from 'material-ui/styles/colors';
-import Checkbox from 'material-ui/Checkbox';
+import red from '@material-ui/core/colors/red';
+import Checkbox from '@material-ui/core/Checkbox';
 import { ValidatorComponent } from 'react-material-ui-form-validator';
+
+const red300 = red['500'];
+
+const style = {
+    right: 0,
+    fontSize: '12px',
+    color: red300,
+    position: 'absolute',
+    marginTop: '-25px',
+};
 
 class CheckboxValidatorElement extends ValidatorComponent {
 
@@ -187,14 +187,6 @@ class CheckboxValidatorElement extends ValidatorComponent {
             return null;
         }
 
-        const style = {
-            right: 0,
-            fontSize: '12px',
-            color: red300,
-            position: 'absolute',
-            marginTop: '-25px',
-        };
-
         return (
             <div style={style}>
                 {this.getErrorMessage()}
@@ -206,7 +198,7 @@ class CheckboxValidatorElement extends ValidatorComponent {
 export default CheckboxValidatorElement;
 ````
 ````javascript
-    componentWillMount() {
+    componentDidMount() {
         ValidatorForm.addValidationRule('isTruthy', value => value);
     }
 ...
@@ -215,7 +207,7 @@ export default CheckboxValidatorElement;
         validators=['isTruthy']
         errorMessages=['this field is required']
         checked={value}
-        value={value} <---- you must provide this prop, it will be used only for validation
+        value={value} // <---- you must provide this prop, it will be used only for validation
     />
 ````
 
