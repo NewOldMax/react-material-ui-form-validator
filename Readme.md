@@ -13,7 +13,7 @@ Compatible version will be installed automatically.
 
 ### Versions
 + <= 1.x - supports material-ui <= 0.x
-+ => 2.x - supports material-ui >= 1.x (experimental support, you can install it by ``npm i react-material-ui-form-validator@next``)
++ => 2.x - supports material-ui >= 1.x
 + => 1.0.1 - supports React 16
 
 Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui](http://www.material-ui.com)
@@ -41,7 +41,7 @@ Some rules can accept extra parameter, example:
 ### Usage
 
 You can pass any props of field components, but note that ``errorText`` prop will be replaced when validation errors occurred.
-Your component must [provide a theme](http://www.material-ui.com/#/get-started/usage).
+Your component must [provide a theme](https://v0.material-ui.com/#/get-started/usage).
 
 ````javascript
 
