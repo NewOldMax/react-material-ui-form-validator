@@ -9,7 +9,7 @@
 ### Installation
 
 ````
-npm install react-material-ui-form-validator@next
+npm install react-material-ui-form-validator
 ````
 
 ### Versions
