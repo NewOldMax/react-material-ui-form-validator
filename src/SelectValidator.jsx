@@ -14,6 +14,7 @@ export default class SelectValidator extends ValidatorComponent {
             requiredError,
             helperText,
             validatorListener,
+            withRequiredValidator,
             ...rest
         } = this.props;
         const { isValid } = this.state;

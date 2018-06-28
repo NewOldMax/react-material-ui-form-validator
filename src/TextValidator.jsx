@@ -7,8 +7,16 @@ import { ValidatorComponent } from 'react-form-validator-core';
 export default class TextValidator extends ValidatorComponent {
 
     render() {
-        // eslint-disable-next-line
-        const { errorMessages, validators, requiredError, helperText, validatorListener, withRequiredValidator, ...rest } = this.props;
+        /* eslint-disable no-unused-vars */
+        const {
+            errorMessages,
+            validators,
+            requiredError,
+            helperText,
+            validatorListener,
+            withRequiredValidator,
+            ...rest
+        } = this.props;
         const { isValid } = this.state;
         return (
             <TextField

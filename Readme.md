@@ -14,14 +14,13 @@ npm install react-material-ui-form-validator@next
 
 ### Versions
 + 0.x, 1.x - supports material-ui <= 0.x
-+ up to 2.0.0-beta.9 - supports material-ui >= 1.x (you can install it by ``npm i react-material-ui-form-validator@2.0.0-beta.9``)
-+ from 2.0.0-beta.10 - supports @material-ui/core (you can install it by ``npm i react-material-ui-form-validator@next``)
++ ^2.0.0 - supports material-ui >= 1.x
 
 Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui v1](https://material-ui-next.com/)
 
 Supported types:
-+ Text ([TextValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/v1/src/TextValidator.jsx))
-+ Select ([SelectValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/v1/src/SelectValidator.jsx))
++ Text ([TextValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/TextValidator.jsx))
++ Select ([SelectValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/SelectValidator.jsx))
 
 Some rules can accept extra parameter, example:
 ````javascript

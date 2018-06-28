@@ -1,7 +1,7 @@
 {
   "name": "react-material-ui-form-validator",
-  "version": "2.0.0-beta.10",
-  "description": "Simple validator for forms designed with material-ui components.",
+  "version": "2.0.0",
+  "description": "Simple validator for forms designed with material-ui v1 components.",
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel ./src -d ./lib --presets=es2015,react,stage-2",
@@ -27,7 +27,7 @@
     "react-form-validator-core": "0.4.4"
   },
   "peerDependencies": {
-    "@material-ui/core": "latest",
+    "@material-ui/core": "^1.0.0",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
     "prop-types": "^15.0.0"
