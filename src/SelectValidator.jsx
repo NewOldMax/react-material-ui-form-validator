@@ -9,6 +9,7 @@ export default class SelectValidator extends ValidatorComponent {
     render() {
         /* eslint-disable no-unused-vars */
         const {
+            error,
             errorMessages,
             validators,
             requiredError,
@@ -22,7 +23,7 @@ export default class SelectValidator extends ValidatorComponent {
             <TextField
                 {...rest}
                 select
-                error={!isValid}
+                error={!isValid || error}
                 helperText={(!isValid && this.getErrorMessage()) || helperText}
             />
         );

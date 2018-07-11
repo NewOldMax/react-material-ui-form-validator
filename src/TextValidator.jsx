@@ -9,6 +9,7 @@ export default class TextValidator extends ValidatorComponent {
     render() {
         /* eslint-disable no-unused-vars */
         const {
+            error,
             errorMessages,
             validators,
             requiredError,
@@ -21,7 +22,7 @@ export default class TextValidator extends ValidatorComponent {
         return (
             <TextField
                 {...rest}
-                error={!isValid}
+                error={!isValid || error}
                 helperText={(!isValid && this.getErrorMessage()) || helperText}
             />
         );
