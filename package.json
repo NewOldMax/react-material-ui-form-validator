@@ -20,7 +20,7 @@
     "react-autosuggest": "9.3.2",
     "react-router-dom": "^4.1.1",
     "@material-ui/core": "^1.0.0",
-    "react-material-ui-form-validator": "^2.0.0",
+    "react-material-ui-form-validator": "^2.0.1",
     "react-prism": "4.3.0",
     "prismjs": "1.6.0"
   },
