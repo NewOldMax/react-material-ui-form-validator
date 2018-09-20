@@ -1,4 +1,4 @@
-## Validation component for material-ui v1 forms
+## Validation component for material-ui forms
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 [![npm version](https://badge.fury.io/js/react-material-ui-form-validator.svg)](https://badge.fury.io/js/react-material-ui-form-validator)
@@ -14,9 +14,9 @@ npm install react-material-ui-form-validator
 
 ### Versions
 + 0.x, 1.x - supports material-ui <= 0.x
-+ ^2.0.0 - supports material-ui >= 1.x
++ ^2.0.0 - supports material-ui >= 1.x || 3.x
 
-Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui v1](https://material-ui-next.com/)
+Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui](https://material-ui.com/)
 
 Supported types:
 + Text ([TextValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/TextValidator.jsx))
@@ -48,7 +48,9 @@ import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class MyForm extends React.Component {
 
-    state = {}
+    state = {
+        email: '',
+    }
 
     handleChange = (event) => {
         const email = event.target.value;
@@ -92,7 +94,12 @@ import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class ResetPasswordForm extends React.Component {
 
-    state = { user: {} };
+    state = {
+        user: {
+            password: '',
+            repeatPassword: '',
+        },
+    };
 
     componentDidMount() {
         // custom rule will have name 'isPasswordMatch'
