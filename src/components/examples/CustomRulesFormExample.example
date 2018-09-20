@@ -70,7 +70,8 @@ export default class CustomRulesFormExample extends React.Component {
                 />
                 <br />
                 <Button
-                    raised
+                    color="primary"
+                    variant="contained"
                     type="submit"
                     disabled={submitted}
                 >

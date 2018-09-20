@@ -58,7 +58,8 @@ export default class SimpleFormExample extends React.Component {
                 />
                 <br />
                 <Button
-                    raised
+                    color="primary"
+                    variant="contained"
                     type="submit"
                     disabled={submitted}
                 >

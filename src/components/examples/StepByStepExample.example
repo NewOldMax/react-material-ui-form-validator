@@ -130,18 +130,16 @@ export default class StepByStepExample extends React.Component {
                 <br />
                 <br />
                 <Button
-                    raised
                     onClick={this.prevStep}
                     style={{ marginRight: '16px' }}
-                    primary
                     disabled={step === 1}
                 >
                     previous
                 </Button>
                 <Button
-                    raised
+                    color="primary"
+                    variant="contained"
                     onClick={step < 3 ? this.nextStep : this.submit}
-                    primary
                     disabled={disabled || submitted}
                 >
                     {
