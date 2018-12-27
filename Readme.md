@@ -21,6 +21,7 @@ Implementation of [react-form-validator-core](https://www.npmjs.com/package/reac
 Supported types:
 + Text ([TextValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/TextValidator.jsx))
 + Select ([SelectValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/SelectValidator.jsx))
++ Checkbox ([CheckboxValidator](src/CheckboxValidator.jsx))
 
 Some rules can accept extra parameter, example:
 ````javascript
