@@ -2,12 +2,6 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-const errorStyle = {
-    position: 'absolute',
-    marginBottom: '-22px',
-    color: 'red',
-};
-
 export default class StepByStepExample extends React.Component {
 
     constructor(props) {
@@ -80,7 +74,6 @@ export default class StepByStepExample extends React.Component {
                         value={data.email1}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                        errorStyle={errorStyle}
                     />);
                 break;
             case 2:
@@ -94,7 +87,6 @@ export default class StepByStepExample extends React.Component {
                         value={data.email2}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                        errorStyle={errorStyle}
                     />);
                 break;
             case 3:
@@ -108,7 +100,6 @@ export default class StepByStepExample extends React.Component {
                         value={data.email3}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                        errorStyle={errorStyle}
                     />);
                 break;
         }
