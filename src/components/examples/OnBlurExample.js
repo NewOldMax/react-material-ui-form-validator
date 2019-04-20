@@ -3,31 +3,26 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class OnBlurExample extends React.Component {
-
-    constructor() {
-        super();
-        this.state = {
-            formData: {
-                email: '',
-            },
-            submitted: false,
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleBlur = this.handleBlur.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    state = {
+        formData: {
+            email: '',
+        },
+        submitted: false,
     }
 
-    handleChange(event) {
+    emailRef = React.createRef();
+
+    handleChange = (event) => {
         const { formData } = this.state;
         formData[event.target.name] = event.target.value;
         this.setState({ formData });
     }
 
-    handleBlur(event) {
-        this.refs[event.target.name].validate(event.target.value);
+    handleBlur = (event) => {
+        this.emailRef.current.validate(event.target.value);
     }
 
-    handleSubmit() {
+    handleSubmit = () => {
         this.setState({ submitted: true }, () => {
             setTimeout(() => this.setState({ submitted: false }), 5000);
         });
@@ -42,7 +37,7 @@ export default class OnBlurExample extends React.Component {
             >
                 <h2>OnBlur</h2>
                 <TextValidator
-                    ref="email"
+                    ref={this.emailRef}
                     label="Email"
                     onBlur={this.handleBlur}
                     onChange={this.handleChange}
@@ -59,8 +54,8 @@ export default class OnBlurExample extends React.Component {
                     disabled={submitted}
                 >
                     {
-                        (submitted && 'Your form is submitted!') ||
-                        (!submitted && 'Submit')
+                        (submitted && 'Your form is submitted!')
+                        || (!submitted && 'Submit')
                     }
                 </Button>
             </ValidatorForm>

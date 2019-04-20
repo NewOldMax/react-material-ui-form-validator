@@ -3,29 +3,21 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class SimpleFormExample extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            formData: {
-                email: '',
-                password: '',
-            },
-            submitted: false,
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    state = {
+        formData: {
+            email: '',
+            password: '',
+        },
+        submitted: false,
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         const { formData } = this.state;
         formData[event.target.name] = event.target.value;
         this.setState({ formData });
     }
 
-    handleSubmit() {
+    handleSubmit = () => {
         this.setState({ submitted: true }, () => {
             setTimeout(() => this.setState({ submitted: false }), 5000);
         });

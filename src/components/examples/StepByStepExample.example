@@ -3,63 +3,58 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class StepByStepExample extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            step: 1,
-            data: {},
-            disabled: false,
-            submitted: false,
-        };
-        this.renderStep = this.renderStep.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.submit = this.submit.bind(this);
-        this.prevStep = this.prevStep.bind(this);
-        this.nextStep = this.nextStep.bind(this);
-        this.validatorListener = this.validatorListener.bind(this);
-        this.onChange = this.onChange.bind(this);
+    state = {
+        step: 1,
+        data: {
+            email1: '',
+            email2: '',
+            email3: '',
+        },
+        disabled: false,
+        submitted: false,
     }
 
-    onChange(event) {
+    onChange = (event) => {
         const { data } = this.state;
         data[event.target.name] = event.target.value;
         this.setState({ data });
     }
 
-    submit() {
-        this.refs.form.submit();
+    submit = () => {
+        this.form.submit();
     }
 
-    handleSubmit() {
+    handleSubmit = () => {
         this.setState({ submitted: true }, () => {
             setTimeout(() => this.setState({ submitted: false }), 5000);
         });
     }
 
-    prevStep() {
-        let step = this.state.step;
+    prevStep = () => {
+        let { step } = this.state;
         if (step > 1) {
             step--;
         }
-        this.setState({ step }, () => this.refs.form.walk(this.refs.form.childs));
+        this.setState({ step });
     }
 
-    nextStep() {
-        if (this.refs.form.walk(this.refs.form.childs)) {
-            let step = this.state.step;
-            if (step < 3) {
-                step++;
+    nextStep = () => {
+        this.form.isFormValid(false).then((isValid) => {
+            if (isValid) {
+                let { step } = this.state;
+                if (step < 3) {
+                    step++;
+                }
+                this.setState({ step });
             }
-            this.setState({ step }, () => this.refs.form.walk(this.refs.form.childs));
-        }
+        });
     }
 
-    validatorListener(result) {
+    validatorListener = (result) => {
         this.setState({ disabled: !result });
     }
 
-    renderStep() {
+    renderStep = () => {
         const { step, data } = this.state;
         let content = null;
         switch (step) {
@@ -74,7 +69,8 @@ export default class StepByStepExample extends React.Component {
                         value={data.email1}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                    />);
+                    />
+                );
                 break;
             case 2:
                 content = (
@@ -87,7 +83,8 @@ export default class StepByStepExample extends React.Component {
                         value={data.email2}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                    />);
+                    />
+                );
                 break;
             case 3:
                 content = (
@@ -100,7 +97,8 @@ export default class StepByStepExample extends React.Component {
                         value={data.email3}
                         onChange={this.onChange}
                         validatorListener={this.validatorListener}
-                    />);
+                    />
+                );
                 break;
         }
         return content;
@@ -110,7 +108,7 @@ export default class StepByStepExample extends React.Component {
         const { step, disabled, submitted } = this.state;
         return (
             <ValidatorForm
-                ref="form"
+                ref={(r) => { this.form = r; }}
                 onSubmit={this.handleSubmit}
                 instantValidate
             >
@@ -134,8 +132,8 @@ export default class StepByStepExample extends React.Component {
                     disabled={disabled || submitted}
                 >
                     {
-                        (submitted && 'Your form is submitted!') ||
-                        (step < 3 ? 'Next' : 'Submit')
+                        (submitted && 'Your form is submitted!')
+                        || (step < 3 ? 'Next' : 'Submit')
                     }
                 </Button>
             </ValidatorForm>

@@ -3,39 +3,32 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 export default class CustomRulesFormExample extends React.Component {
+    state = {
+        formData: {
+            password: '',
+            repeatPassword: '',
+        },
+        submitted: false,
+    };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            formData: {
-                password: '',
-                repeatPassword: '',
-            },
-            submitted: false,
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    componentWillMount() {
+    componentDidMount() {
         // custom rule will have name 'isPasswordMatch'
         ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
-            if (value !== this.state.formData.password) {
+            const { formData } = this.state;
+            if (value !== formData.password) {
                 return false;
             }
             return true;
         });
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         const { formData } = this.state;
         formData[event.target.name] = event.target.value;
         this.setState({ formData });
     }
 
-    handleSubmit() {
+    handleSubmit = () => {
         this.setState({ submitted: true }, () => {
             setTimeout(() => this.setState({ submitted: false }), 5000);
         });
@@ -43,7 +36,6 @@ export default class CustomRulesFormExample extends React.Component {
 
     render() {
         const { formData, submitted } = this.state;
-
         return (
             <ValidatorForm
                 onSubmit={this.handleSubmit}
@@ -76,8 +68,8 @@ export default class CustomRulesFormExample extends React.Component {
                     disabled={submitted}
                 >
                     {
-                        (submitted && 'Your form is submitted!') ||
-                        (!submitted && 'Submit')
+                        (submitted && 'Your form is submitted!')
+                        || (!submitted && 'Submit')
                     }
                 </Button>
             </ValidatorForm>
