@@ -25,6 +25,9 @@ export default class CustomRulesFormExample extends React.Component {
     handleChange = (event) => {
         const { formData } = this.state;
         formData[event.target.name] = event.target.value;
+        if (event.target.name === 'password') {
+            this.form.isFormValid(false);
+        }
         this.setState({ formData });
     }
 
@@ -38,6 +41,7 @@ export default class CustomRulesFormExample extends React.Component {
         const { formData, submitted } = this.state;
         return (
             <ValidatorForm
+                ref={r => (this.form = r)}
                 onSubmit={this.handleSubmit}
             >
                 <h2>Custom rules</h2>

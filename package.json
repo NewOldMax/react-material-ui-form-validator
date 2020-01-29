@@ -18,13 +18,12 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-router-dom": "^4.1.1",
-    "@material-ui/core": "^4.0.2",
-    "react-material-ui-form-validator": "2.0.9",
+    "@material-ui/core": "^4.9.0",
+    "react-material-ui-form-validator": "2.0.10",
     "react-prism": "4.3.0",
     "prismjs": "1.6.0"
   },
   "devDependencies": {
-    "raw-loader": "^0.5.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
@@ -45,7 +44,8 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "^4.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
+    "raw-loader": "^0.5.1",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.14"
