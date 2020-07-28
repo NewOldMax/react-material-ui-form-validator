@@ -6,6 +6,9 @@ import OnBlurExample from './examples/OnBlurExample';
 import StepByStepExample from './examples/StepByStepExample';
 import DebouncedExample from './examples/DebouncedExample';
 import Example from './Example';
+import packageData from '../../package.json';
+
+const version = packageData.dependencies['react-material-ui-form-validator'];
 
 const style = {
     container: {
@@ -33,7 +36,7 @@ const Home = () => (
         <a href="https://github.com/NewOldMax/react-material-ui-form-validator" style={style.link}>
             <img src="build/logo.png" alt="GitHub" />
         </a>
-        <h1 style={style.title}>React material-ui form validator examples</h1>
+        <h1 style={style.title}>React material-ui form validator ({version}) examples</h1>
         <Paper style={style.example}>
             <Example className="language-javascript" component="pre">
                 {require('./examples/SimpleFormExample.example')}

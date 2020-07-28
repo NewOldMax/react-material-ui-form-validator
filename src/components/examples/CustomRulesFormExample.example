@@ -2,24 +2,40 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-export default class CustomRulesFormExample extends React.Component {
-    state = {
-        formData: {
-            password: '',
-            repeatPassword: '',
-        },
-        submitted: false,
-    };
+const style = {
+    info: {
+        float: 'right',
+    },
+};
 
-    componentDidMount() {
+export default class CustomRulesFormExample extends React.Component {
+    constructor(props) {
+        super(props);
+
         // custom rule will have name 'isPasswordMatch'
-        ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
-            const { formData } = this.state;
-            if (value !== formData.password) {
-                return false;
-            }
-            return true;
-        });
+        if (!ValidatorForm.hasValidationRule('isPasswordMatch')) {
+            ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
+                const { formData } = this.state;
+                if (value !== formData.password) {
+                    return false;
+                }
+                return true;
+            });
+        }
+
+        this.state = {
+            formData: {
+                password: '',
+                repeatPassword: '',
+            },
+            submitted: false,
+        };
+    }
+
+    componentWillUnmount() {
+        if (ValidatorForm.hasValidationRule('isPasswordMatch')) {
+            ValidatorForm.removeValidationRule('isPasswordMatch');
+        }
     }
 
     handleChange = (event) => {
@@ -45,6 +61,9 @@ export default class CustomRulesFormExample extends React.Component {
                 onSubmit={this.handleSubmit}
             >
                 <h2>Custom rules</h2>
+                <div style={style.info}>
+                    isPasswordMatch rule enabled: {ValidatorForm.hasValidationRule('isPasswordMatch') ? 'true' : 'false'}
+                </div>
                 <TextValidator
                     label="Password"
                     onChange={this.handleChange}
