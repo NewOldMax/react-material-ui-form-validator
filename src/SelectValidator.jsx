@@ -5,8 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import { ValidatorComponent } from 'react-form-validator-core';
 
 export default class SelectValidator extends ValidatorComponent {
-
-    render() {
+    renderValidatorComponent() {
         /* eslint-disable no-unused-vars */
         const {
             error,
