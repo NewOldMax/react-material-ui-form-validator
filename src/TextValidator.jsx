@@ -15,6 +15,7 @@ export default class TextValidator extends ValidatorComponent {
             helperText,
             validatorListener,
             withRequiredValidator,
+            containerProps,
             ...rest
         } = this.props;
         const { isValid } = this.state;
