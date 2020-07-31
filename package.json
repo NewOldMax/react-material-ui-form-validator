@@ -19,7 +19,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "react-material-ui-form-validator": "2.1.0",
+    "react-material-ui-form-validator": "2.1.1",
     "react-prism": "4.3.0",
     "react-router-dom": "^4.1.1"
   },
