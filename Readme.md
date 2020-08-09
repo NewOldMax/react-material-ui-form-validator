@@ -177,7 +177,7 @@ const style = {
 
 class CheckboxValidatorElement extends ValidatorComponent {
 
-    render() {
+    renderValidatorComponent() {
         const { errorMessages, validators, requiredError, value, ...rest } = this.props;
 
         return (
