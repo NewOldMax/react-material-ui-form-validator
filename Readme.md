@@ -18,6 +18,41 @@ npm install react-material-ui-form-validator
 
 Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui](https://material-ui.com/)
 
+### Migration guide
+
+#### From <2.1.1 to >=2.1.1
+
+Breaking changes was introduced to react-form-validator-core in order to avoid legacy context. If you have custom validator components then you should change `render` method of your input components to `renderValidatorComponent`.
+
+Before:
+````javascript
+import React from 'react';
+import { ValidatorComponent } from 'react-material-ui-form-validator';
+
+class SomeValidator extends ValidatorComponent {
+    render() {
+        // return your validated component
+    }
+}
+
+export default TextValidator;
+````
+
+After:
+````javascript
+import React from 'react';
+import { ValidatorComponent } from 'react-material-ui-form-validator';
+
+class SomeValidator extends ValidatorComponent {
+    renderValidatorComponent() {
+        // return your validated component
+    }
+}
+
+export default TextValidator;
+````
+### Info
+
 Supported types:
 + Text ([TextValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/TextValidator.jsx))
 + Select ([SelectValidator](https://github.com/NewOldMax/react-material-ui-form-validator/blob/master/src/SelectValidator.jsx))
