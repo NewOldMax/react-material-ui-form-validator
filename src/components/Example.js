@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PrismCode } from 'react-prism';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 const getStyle = (open) => {
     if (open) {

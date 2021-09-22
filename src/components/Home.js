@@ -1,5 +1,5 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
+import Paper from '@mui/material/Paper';
 import SimpleFormExample from './examples/SimpleFormExample';
 import CustomRulesFormExample from './examples/CustomRulesFormExample';
 import OnBlurExample from './examples/OnBlurExample';
