@@ -15,8 +15,9 @@ npm install react-material-ui-form-validator
 ### Versions
 + 0.x, 1.x - supports material-ui <= 0.x
 + ^2.0.0 - supports material-ui >= 1.x || 3.x || 4.x
++ ^3.0.0 - supports material-ui >= 5.x
 
-Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui](https://material-ui.com/)
+Implementation of [react-form-validator-core](https://www.npmjs.com/package/react-form-validator-core) for [material-ui](https://mui.com/)
 
 ### Migration guide
 
@@ -78,7 +79,7 @@ Your component must [provide a theme](http://www.material-ui.com/#/get-started/u
 ````javascript
 
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class MyForm extends React.Component {
@@ -124,7 +125,7 @@ You can add your custom rules:
 ````javascript
 
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 class ResetPasswordForm extends React.Component {
@@ -196,8 +197,8 @@ class ResetPasswordForm extends React.Component {
 Currently material-ui [doesn't support](https://github.com/callemall/material-ui/issues/3771) error messages for switches, but you can easily add your own:
 ````javascript
 import React from 'react';
-import red from '@material-ui/core/colors/red';
-import Checkbox from '@material-ui/core/Checkbox';
+import red from '@mui/material/colors/red';
+import Checkbox from '@mui/material/Checkbox';
 import { ValidatorComponent } from 'react-material-ui-form-validator';
 
 const red300 = red['500'];
