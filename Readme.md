@@ -36,7 +36,7 @@ class SomeValidator extends ValidatorComponent {
     }
 }
 
-export default TextValidator;
+export default SomeValidator;
 ````
 
 After:
@@ -50,7 +50,7 @@ class SomeValidator extends ValidatorComponent {
     }
 }
 
-export default TextValidator;
+export default SomeValidator;
 ````
 ### Info
 
