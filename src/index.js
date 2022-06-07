@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
     <BrowserRouter basename="/react-material-ui-form-validator">
         <App />
-    </BrowserRouter>,
-    document.getElementById('root'),
+    </BrowserRouter>
 );
