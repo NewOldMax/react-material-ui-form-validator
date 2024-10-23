@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     './src/index.js'
   ],
   output: {
@@ -15,7 +15,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    host: '0.0.0.0',
+    port: 8082,
   },
   watchOptions: {
     poll: true,
@@ -26,9 +28,9 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       {
         loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'es2017', 'stage-2'],
-          plugins: ['transform-runtime',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-optional-chaining',
               ['module-resolver', {
               'root': ['src'],
             }]
@@ -39,5 +41,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map'
+  devtool: 'eval-cheap-source-map'
 };
