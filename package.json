@@ -1,6 +1,6 @@
 {
   "name": "react-material-ui-form-validator",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Simple validator for forms designed with material-ui v1/v3/v4/v5 components.",
   "main": "./lib/index.js",
   "scripts": {
@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/NewOldMax/react-material-ui-form-validator#readme",
   "dependencies": {
-    "react-form-validator-core": "1.1.2",
+    "react-form-validator-core": "2.0.0",
     "prop-types": "^15.0.0"
   },
   "peerDependencies": {
-    "@mui/material": "^5.0.0",
+    "@mui/material": "^6.0.0",
     "react": "^17.0.2 || ^18.0.0",
     "react-dom": "^17.0.2 || ^18.0.0"
   },
