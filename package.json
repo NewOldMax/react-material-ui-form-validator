@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/NewOldMax/react-material-ui-form-validator#readme",
   "dependencies": {
-    "react-form-validator-core": "1.1.2",
+    "react-form-validator-core": "2.0.1",
     "prop-types": "^15.0.0"
   },
   "peerDependencies": {
