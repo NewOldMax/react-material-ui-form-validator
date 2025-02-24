@@ -27,7 +27,7 @@ export default class SimpleFormExample extends React.Component {
         const { formData, submitted } = this.state;
         return (
             <ValidatorForm
-                ref="form"
+                ref={r => (this.form = r)}
                 onSubmit={this.handleSubmit}
             >
                 <h2>Simple form</h2>

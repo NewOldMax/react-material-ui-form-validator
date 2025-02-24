@@ -26,7 +26,7 @@ export default class DebouncedExample extends React.Component {
         const { formData, submitted } = this.state;
         return (
             <ValidatorForm
-                ref="form"
+                ref={r => (this.form = r)}
                 onSubmit={this.handleSubmit}
                 debounceTime={1500}
             >

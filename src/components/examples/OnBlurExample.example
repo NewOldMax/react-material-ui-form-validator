@@ -37,7 +37,7 @@ export default class OnBlurExample extends React.Component {
             >
                 <h2>OnBlur</h2>
                 <TextValidator
-                    ref={this.emailRef}
+                    ref={r => (this.form = r)}
                     label="Email"
                     onBlur={this.handleBlur}
                     onChange={this.handleChange}

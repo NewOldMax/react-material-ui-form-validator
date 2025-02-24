@@ -21,11 +21,11 @@
     "@mui/material": "^6.1.5",
     "prismjs": "1.6.0",
     "prop-types": "^15.5.8",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-material-ui-form-validator": "4.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-material-ui-form-validator": "4.0.2",
     "react-prism": "4.3.0",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.25.9",
