@@ -1,6 +1,6 @@
 {
   "name": "react-material-ui-form-validator",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "description": "Simple validator for forms designed with material-ui v1/v3/v4/v5 components.",
   "main": "./lib/index.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "prop-types": "^15.0.0"
   },
   "peerDependencies": {
-    "@mui/material": "^6.0.0",
+    "@mui/material": "^7.0.0",
     "react": "^17.0.2 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0"
   },
