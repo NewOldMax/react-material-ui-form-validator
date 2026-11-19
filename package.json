@@ -1,6 +1,6 @@
 {
   "name": "spa-github-pages",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "private": true,
   "description": "Single Page Apps for GitHub Pages",
   "scripts": {
@@ -17,13 +17,13 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.1.0",
-    "@mui/icons-material": "^7.0.0",
-    "@mui/material": "^7.0.0",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
     "prismjs": "1.6.0",
     "prop-types": "^15.5.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-material-ui-form-validator": "5.0.0",
+    "react-material-ui-form-validator": "6.0.0",
     "react-prism": "4.3.0",
     "react-router-dom": "^5.0.0"
   },

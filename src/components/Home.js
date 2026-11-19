@@ -9,6 +9,7 @@ import Example from './Example';
 import packageData from '../../package.json';
 
 const version = packageData.dependencies['react-material-ui-form-validator'];
+const muiVersion = packageData.dependencies['@mui/material'];
 
 const style = {
     container: {
@@ -37,6 +38,7 @@ const Home = () => (
             <img src="build/logo.png" alt="GitHub" />
         </a>
         <h1 style={style.title}>React material-ui form validator ({version}) examples</h1>
+        <h4>@mui/material version {muiVersion}</h4>
         <Paper style={style.example}>
             <Example className="language-javascript" component="pre">
                 {require('./examples/SimpleFormExample.example')}
